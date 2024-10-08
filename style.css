@@ -1,35 +1,52 @@
+/* O CSS continua praticamente o mesmo */
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--hue: 223;
+	--bg: #FFFFFF;
+	--fg: #191919;
+	--primary: hsl(var(--hue), 90%, 50%);
+	--trans-dur: 0.3s;
+	font-size: calc(20px + (60 - 20) * (100vw - 320px) / (2560 - 320));
+}
+
 body {
-	font-family: 'DM Sans', sans-serif; /* Font family for the body */
-	background-color: #f0f0f0; /* Light background */
-	color: #333; /* Dark text color */
+	background-color: var(--bg);
+	color: var(--fg);
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh; /* Full viewport height */
-	margin: 0; /* Remove default margin */
-  }
-  
-  .clock {
-	background: white; /* White background for the clock */
-	border-radius: 15px; /* Rounded corners */
-	padding: 20px; /* Padding around the clock */
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-	text-align: center; /* Center text */
-	font-size: 2em; /* Increase font size */
-  }
-  
-  .clock__word {
-	display: block; /* Make each word take a full line */
-	transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition for animations */
-  }
-  
-  .clock__word--fade-fly-in {
-	opacity: 0; /* Start fully transparent */
-	transform: translateY(-20px); /* Move upwards for effect */
-  }
-  
-  .clock__word--fade-fly-in.show {
-	opacity: 1; /* Fade in to visible */
-	transform: translateY(0); /* Move back to original position */
-  }
-  
+	font: 1em/1.5 "DM Sans", sans-serif;
+	height: 100vh;
+	transition: background-color var(--trans-dur), color var(--trans-dur);
+}
+
+.clock {
+	margin: auto;
+	text-align: center;
+}
+
+.clock__word {
+	display: inline-block;
+	font-weight: 200;
+}
+
+.clock__word:empty {
+	display: none;
+}
+
+.clock__word--bold {
+	font-weight: 600;
+}
+
+.clock__word--fade-fly-in {
+	animation: fade-fly-in 0.6s cubic-bezier(0.65,0,0.35,1);
+}
+
+@keyframes fade-fly-in {
+	from { opacity: 0; transform: translateY(100%); }
+	to { opacity: 1; transform: translateY(0); }
+}
