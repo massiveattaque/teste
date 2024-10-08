@@ -1,0 +1,35 @@
+body {
+	font-family: 'DM Sans', sans-serif; /* Font family for the body */
+	background-color: #f0f0f0; /* Light background */
+	color: #333; /* Dark text color */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh; /* Full viewport height */
+	margin: 0; /* Remove default margin */
+  }
+  
+  .clock {
+	background: white; /* White background for the clock */
+	border-radius: 15px; /* Rounded corners */
+	padding: 20px; /* Padding around the clock */
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+	text-align: center; /* Center text */
+	font-size: 2em; /* Increase font size */
+  }
+  
+  .clock__word {
+	display: block; /* Make each word take a full line */
+	transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition for animations */
+  }
+  
+  .clock__word--fade-fly-in {
+	opacity: 0; /* Start fully transparent */
+	transform: translateY(-20px); /* Move upwards for effect */
+  }
+  
+  .clock__word--fade-fly-in.show {
+	opacity: 1; /* Fade in to visible */
+	transform: translateY(0); /* Move back to original position */
+  }
+  

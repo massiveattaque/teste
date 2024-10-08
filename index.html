@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Character encoding declaration for UTF-8 -->
+  <meta charset="UTF-8">
+  <!-- Page title -->
+  <title>Calendar Version</title>
+  <!-- Viewport adjustment for mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- Link to import the DM Sans font from Google Fonts -->
+  <link rel='stylesheet' href='<https://fonts.googleapis.com/css2?family=DM+Sans:wght@200;400;600&display=swap>'>
+  <!-- Link to the local stylesheet -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- Container for the clock -->
+  <div class="clock">
+    <!-- Words that make up the clock in text -->
+    <strong class="clock__word clock__word--bold"></strong> <!-- Day of the week -->
+    <span class="clock__word"></span> <!-- Day -->
+    <strong class="clock__word clock__word--bold"></strong> <!-- Month -->
+    <strong class="clock__word clock__word--bold"></strong> <!-- Year -->
+  </div>
+
+  <!-- Button to toggle themes (light and dark) -->
+  <div id="setting-wrapper">
+    <button id="theme-btn"><i class="fa-solid fa-circle-half-stroke"></i></button>
+  </div>
+  <!-- Link to the local JavaScript file -->
+  <script src="./script.js"></script>
+</body>
+</html>
